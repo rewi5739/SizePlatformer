@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqquwxmk0ecw8"]
+
+[ext_resource type="Script" path="res://Scripts/size_character.gd" id="1_drnpo"]
+[ext_resource type="Texture2D" uid="uid://dn2s0q1mlpv60" path="res://tempAssets/small_test.png" id="2_xooci"]
+[ext_resource type="Script" path="res://Scripts/small.gd" id="3_xcnhq"]
+[ext_resource type="Script" path="res://Scripts/medium.gd" id="4_bpb36"]
+[ext_resource type="Script" path="res://Scripts/large.gd" id="5_sykh4"]
+[ext_resource type="Script" path="res://Scripts/huge.gd" id="6_kex36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyeox"]
+size = Vector2(28, 28)
+
+[node name="SizeCharacter" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_drnpo")
+initial_state = NodePath("States/Small")
+
+[node name="MainSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xooci")
+
+[node name="MainCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yyeox")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Small" type="Node" parent="States"]
+script = ExtResource("3_xcnhq")
+
+[node name="Medium" type="Node" parent="States"]
+script = ExtResource("4_bpb36")
+
+[node name="Large" type="Node" parent="States"]
+script = ExtResource("5_sykh4")
+
+[node name="Huge" type="Node" parent="States"]
+script = ExtResource("6_kex36")
