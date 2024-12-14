@@ -15,6 +15,8 @@ func process_state(_delta):
 
 func grow():
 	change_state.emit(medium_state)
+	return true
 
 func shrink():
 	print("no Smaller State")
+	return false

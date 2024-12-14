@@ -11,6 +11,7 @@
 size = Vector2(28, 28)
 
 [node name="SizeCharacter" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+collision_mask = 7
 script = ExtResource("1_drnpo")
 initial_state = NodePath("States/Small")
 

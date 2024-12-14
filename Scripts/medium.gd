@@ -17,6 +17,9 @@ func process_state(_delta):
 
 func grow():
 	change_state.emit(large_state)
+	Globals.pushable_crates.emit()
+	return true
 
 func shrink():
 	change_state.emit(small_state)
+	return true

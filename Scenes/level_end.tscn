@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq87ope73aaer"]
+
+[ext_resource type="Script" path="res://level_end.gd" id="1_34ymu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1wd0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_26gug"]
+
+[node name="Level End" type="Area2D"]
+script = ExtResource("1_34ymu")
+
+[node name="MainCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k1wd0")
+
+[node name="MainSprite" type="Sprite2D" parent="."]
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_26gug")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
