@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=4 uid="uid://d3d1s1067m1xi"]
 
 [ext_resource type="TileSet" uid="uid://bt0yp44p4dxtk" path="res://Assets/Tileset.tres" id="1_gvfji"]
-[ext_resource type="Script" path="res://Scenes/breakable_blocks.gd" id="3_u305w"]
+[ext_resource type="Script" path="res://Scripts/breakable_blocks.gd" id="3_u305w"]
 [ext_resource type="Texture2D" uid="uid://c3bxyse3bi1t0" path="res://tempAssets/icon.svg" id="4_2i4im"]
 [ext_resource type="Shader" path="res://test.gdshader" id="5_rta4o"]
 [ext_resource type="PackedScene" uid="uid://deknfpwpo8t8j" path="res://Scenes/door.tscn" id="6_44o56"]
 [ext_resource type="PackedScene" uid="uid://dqquwxmk0ecw8" path="res://Scenes/size_character.tscn" id="7_4wahv"]
 [ext_resource type="PackedScene" uid="uid://cm5bmhgji1rys" path="res://Scenes/size_pellet.tscn" id="8_sy4b4"]
 [ext_resource type="PackedScene" uid="uid://cq87ope73aaer" path="res://Scenes/level_end.tscn" id="9_ttqsj"]
-[ext_resource type="PackedScene" uid="uid://dodj3a5wqg5u0" path="res://Scenes/main.tscn" id="10_nfng2"]
+[ext_resource type="PackedScene" uid="uid://flwh880w3mw2" path="res://Scenes/World3.tscn" id="10_00e0d"]
 [ext_resource type="PackedScene" uid="uid://cvem0jcs4sb6p" path="res://Scenes/size_remover.tscn" id="10_wxvsr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b8di7"]
@@ -50,6 +50,7 @@ texture = ExtResource("4_2i4im")
 [node name="Door" parent="." node_paths=PackedStringArray("switch") instance=ExtResource("6_44o56")]
 position = Vector2(1136, 672)
 switch = NodePath("../SizeRemover")
+open = true
 
 [node name="SizeCharacter" parent="." instance=ExtResource("7_4wahv")]
 position = Vector2(433, 934)
@@ -58,11 +59,10 @@ position = Vector2(433, 934)
 position = Vector2(1052, 670)
 
 [node name="SizeRemover" parent="." instance=ExtResource("10_wxvsr")]
-position = Vector2(97, 805)
-
-[node name="SizePellet2" parent="." instance=ExtResource("8_sy4b4")]
-position = Vector2(735, 810)
+position = Vector2(756, 810)
+has_size = true
+ID = "1"
 
 [node name="Level End" parent="." instance=ExtResource("9_ttqsj")]
 position = Vector2(1669, 683)
-nextScene = ExtResource("10_nfng2")
+nextScene = ExtResource("10_00e0d")

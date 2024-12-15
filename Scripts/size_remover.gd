@@ -1,7 +1,9 @@
 extends Area2D
 
 @onready var main_sprite = $MainSprite
+@onready var label = $Label
 @export var has_size :bool = false
+@export var ID : String = ""
 var character_present = null
 signal got_size
 signal lost_size
@@ -21,6 +23,7 @@ func update_to_state():
 		main_sprite.modulate = Color("#1aca63")
 	else:
 		main_sprite.modulate = Color("db4d64")
+	label.text = ID
 
 func _on_body_entered(body: Node2D) -> void:
 	character_present = body

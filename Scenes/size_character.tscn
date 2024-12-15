@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqquwxmk0ecw8"]
+[gd_scene load_steps=10 format=3 uid="uid://dqquwxmk0ecw8"]
 
 [ext_resource type="Script" path="res://Scripts/size_character.gd" id="1_drnpo"]
 [ext_resource type="Texture2D" uid="uid://dn2s0q1mlpv60" path="res://tempAssets/small_test.png" id="2_xooci"]
@@ -6,6 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/medium.gd" id="4_bpb36"]
 [ext_resource type="Script" path="res://Scripts/large.gd" id="5_sykh4"]
 [ext_resource type="Script" path="res://Scripts/huge.gd" id="6_kex36"]
+[ext_resource type="Script" path="res://Scripts/trail.gd" id="7_7x76x"]
+
+[sub_resource type="Curve" id="Curve_e26uk"]
+max_value = 3.0
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(1, 0.472527), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyeox"]
 size = Vector2(28, 28)
@@ -14,6 +20,11 @@ size = Vector2(28, 28)
 collision_mask = 7
 script = ExtResource("1_drnpo")
 initial_state = NodePath("States/Small")
+
+[node name="Trail" type="Line2D" parent="."]
+width_curve = SubResource("Curve_e26uk")
+default_color = Color(0.480956, 0.589507, 0.933043, 1)
+script = ExtResource("7_7x76x")
 
 [node name="MainSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_xooci")

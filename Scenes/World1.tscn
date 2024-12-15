@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://cp4jwkcr2yjhs"]
 
 [ext_resource type="TileSet" uid="uid://bt0yp44p4dxtk" path="res://Assets/Tileset.tres" id="1_guiyx"]
-[ext_resource type="Script" path="res://Scenes/breakable_blocks.gd" id="3_gat13"]
+[ext_resource type="Script" path="res://Scripts/breakable_blocks.gd" id="3_gat13"]
 [ext_resource type="Texture2D" uid="uid://c3bxyse3bi1t0" path="res://tempAssets/icon.svg" id="4_ognuy"]
 [ext_resource type="Shader" path="res://test.gdshader" id="5_ave41"]
 [ext_resource type="PackedScene" uid="uid://cq87ope73aaer" path="res://Scenes/level_end.tscn" id="6_3shlb"]

@@ -5,11 +5,13 @@ extends CharacterBody2D
 @onready var main_sprite = $MainSprite
 @onready var main_collider = $MainCollider
 @onready var anim_player = $AnimationPlayer
+@onready var label = $Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	switch.got_size.connect(open_door)
 	switch.lost_size.connect(close_door)
+	label.text = switch.ID
 	if open:
 		open_door()
 	else:
